@@ -1,0 +1,26 @@
+Hello ,
+
+Please follow the steps below to set up and run the project:
+
+Install all the required modules by running "pip install -r requirements.txt" in your Python environment if they are not already installed.
+
+Add your MySQL database credentials in the "settings.py" file as shown below:
+
+DATABASES = {
+'default': {
+'ENGINE': 'django.db.backends.mysql',
+'NAME': 'your_database_name',
+'USER': 'your_username',
+'PASSWORD': 'your_password',
+'HOST': 'localhost',
+'PORT': '3306',
+}
+}
+
+Run the command "python manage.py collectstatic" to collect all the static files.[NOTE: some functions are developed using javascript.]
+
+Run the command "python manage.py makemigrations" to generate the migration files for the database models.
+
+Run the command "python manage.py migrate" to apply the migration files to the database.
+
+Finally, run the command "python manage.py runserver" to start the server and access the project in your web browser.

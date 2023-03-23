@@ -1,0 +1,43 @@
+{% extends 'signupForm.html' %}
+{% load static %}
+{% block content %}
+
+
+
+    <div class=" d-flex flex-row justify-content-center ">
+
+        <div class="">
+            {% for message in messages %}
+            <span style="align-items: center; color:red; font-weight: bold;">{{message}}</span>
+            {% endfor %}
+    
+            <form action="{% url 'login' %}" method="POST">{% csrf_token %}
+                <div class="mt-2 mb-2">
+                    <h1 class="text-center">Login </h1>
+                </div>
+                
+                <div class="mt-3 mb-1 ">
+                    <label class="mr-2" for="username"><b>UserName</b></label>
+                    <input type="text" placeholder="Enter your username" name="username" id="email" >
+                    <hr/>
+    
+                </div>
+                <div class="mb-1">
+                    <label class="mr-2" for="password1"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password2" id="psw" required>
+                    <hr>
+                </div>
+                <div class="mt-2 text-center">
+                    <button type="submit" class="text-center btn btn-primary registerbtn">Login</button>
+                    <a href="{% url 'register' %}">
+                        <button class="btn btn-secondary">Register</button>
+                    </a>
+                </div>
+    
+            </form>
+            {% endblock %}
+        </div>
+
+    </div>
+
+    
